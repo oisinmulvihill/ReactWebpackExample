@@ -10,7 +10,6 @@ export default class App extends React.Component {
             <div className={app_style.mydiv}>
                 ReactJS 16 + Webpack 3 Boilerplate<br/>
                 v{ VERSION }<br/>
-                env: { ENV }
             </div>
         )
     }

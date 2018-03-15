@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const VERSION = require('./package.json').version;
 
-const PORT = process.env.PORT || 6080;
+const PORT = 6080;
 const SRC = path.resolve(__dirname, 'src');
 const SASS_PATH = path.resolve(SRC, 'sass');
 const extractSass = new ExtractTextPlugin({

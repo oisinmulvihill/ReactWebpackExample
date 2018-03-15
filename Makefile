@@ -2,6 +2,7 @@ YARN_VERSION=0.27.5
 NODE_VERSION=v8.2.1
 NODE_BIN=./node_modules/.bin
 DIST=./dist
+NODE_ENV=development
 
 install:
 ifneq ($(shell yarn --version),${YARN_VERSION})
@@ -19,8 +20,8 @@ build:
 	mkdir -p $(DIST)
 	$(NODE_BIN)/webpack-cli --config webpack.config.js
 
-run_local: build
-	echo
+run_local:
+	$(NODE_BIN)/webpack-dev-server --config webpack.config.js
 
 watch:
 	$(NODE_BIN)/webpack-cli --watch
