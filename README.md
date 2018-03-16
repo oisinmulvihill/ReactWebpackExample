@@ -16,7 +16,7 @@ nvm use v8.2.1
 make install
 
 # Run the dev server
-make run_local
+make run
 
 ```
 
