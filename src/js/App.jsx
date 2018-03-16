@@ -1,6 +1,5 @@
 import React from 'react';
 
-import style from '../sass/bootstrap/bootstrap.scss'
 import app_style from '../sass/app.scss'
 
 export default class App extends React.Component {
