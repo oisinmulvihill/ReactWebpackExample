@@ -1,22 +1,21 @@
-YARN_VERSION=0.27.5
-NODE_VERSION=v8.2.1
+YARN_VERSION=1.0.1
+NODE_VERSION=v10.11.0
 NODE_BIN=./node_modules/.bin
-DIST=./dist
 
 install:
-ifneq ($(shell yarn --version),${YARN_VERSION})
-	$(error 'You must install yarn ${YARN_VERSION}')
-endif
 ifneq ($(shell node --version),${NODE_VERSION})
 	$(error 'You must install node ${NODE_VERSION}')
 endif
-	yarn install
+	${NODE_BIN}/yarn install
 
 clean:
-	rm -rf $(DIST)
+	rm -rf dist
+	rm -rf build
 
+build: NODE_ENV=development
 build:
-	mkdir -p $(DIST)
+	# Build the static resources of the React app which will be put into
+	# the viewers static directory.
 	$(NODE_BIN)/webpack-cli --config webpack.config.js
 
 run: NODE_ENV=development
